@@ -115,8 +115,8 @@ class Field:
 
 size = 10
 item_start =(8,2)
-item_dropoff = (5,5)
-start_position = (9,0)
+item_dropoff = (7,7)
+start_position = (1,0)
 
 field = Field(size,item_start,item_dropoff,start_position)
 number_of_states = field.get_number_of_states()
