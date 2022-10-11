@@ -12,6 +12,7 @@ def FormatBoard(board):
     str = str.replace(r"1", r'P'  )
     str = str.replace(r"8",  r'X'  )
     str = str.replace(r"9",  r'O' )
+    str = str.replace(r"0",  r' ' )
     return str
 
 def naive_solution():
@@ -113,8 +114,8 @@ class Field:
 
 
 size = 10
-item_start =(0,0)
-item_dropoff = (9,9)
+item_start =(8,2)
+item_dropoff = (5,5)
 start_position = (9,0)
 
 field = Field(size,item_start,item_dropoff,start_position)
