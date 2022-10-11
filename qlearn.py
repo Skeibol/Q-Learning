@@ -145,8 +145,9 @@ epsilon = 0.1
 alpha = 0.01
 gamma = 0.6
 c_list =[]
-rewardMax = 0
+minSteps = 50
 for _ in range(100000):
+    steps = 0
     field = Field(size,item_start,item_dropoff,start_position)
     done = False
     rewardS = 0
@@ -166,11 +167,13 @@ for _ in range(100000):
         new_state = field.get_state()
         new_state_max = np.max(q_table[new_state])
         q_table[state,action] = (1-alpha)*q_table[state,action] + alpha*(reward + gamma*new_state_max - q_table[state,action])
-        rewardS+=reward
-        if rewardS>rewardMax:
-            rewardMax = rewardS
+        steps+=1
+    if steps<minSteps:
+        minSteps = steps
 
-print(rewardMax)
+    print(steps)
+
+print(minSteps)
     
 
 
