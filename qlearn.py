@@ -114,9 +114,9 @@ class Field:
 
 
 size = 10
-item_start =(8,2)
-item_dropoff = (7,7)
-start_position = (1,0)
+item_start =      (8,2)
+item_dropoff =    (7,7)
+start_position =  (1,0)
 
 field = Field(size,item_start,item_dropoff,start_position)
 number_of_states = field.get_number_of_states()
@@ -165,6 +165,9 @@ for epoch in range(100000):
 
     if epoch != 0 and epoch % 2000 == 0:
         print(f"Min steps: {minSteps}, Max reward: {maxReward}, Epoch: {epoch}")
+        item_start =      (random.randint(0,9),random.randint(0,9))
+        item_dropoff =    (random.randint(0,9),random.randint(0,9))
+        start_position =  (random.randint(0,9),random.randint(0,9))
 
 print(minSteps,maxReward)
     
